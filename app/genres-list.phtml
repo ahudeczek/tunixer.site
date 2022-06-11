@@ -1,0 +1,13 @@
+<?php
+$db = mysqli_connect("sql102.epizy.com", "epiz_31786048", "EbTuI6yBml6gYN9", "epiz_31786048_project_wea_das"); 
+mysqli_set_charset($db,"utf8");
+$genres_query = "SELECT * FROM tx_genres";
+$genres_result = mysqli_query($db, $genres_query);
+$genres = mysqli_fetch_all($genres_result, MYSQLI_ASSOC);
+
+echo "<div class='outer-genres-list-index'>";
+    foreach ($genres as $genre){
+        $file = strtolower($genre["name"]);
+        echo "<a href=$file>"."<div class='inner-genres'>".$genre["name"]."</div>"."</a>";
+    }
+
