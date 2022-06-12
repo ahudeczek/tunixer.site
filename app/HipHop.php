@@ -12,7 +12,7 @@
 </head>
 <?php
 require "auth_session.php";
-$db = mysqli_connect("sql102.epizy.com", "epiz_31786048", "EbTuI6yBml6gYN9", "epiz_31786048_project_wea_das"); 
+$db = mysqli_connect(); 
 mysqli_set_charset($db,"utf8");
 $get_all_rock_songs = "SELECT tx_songs.song_name, tx_songs.mp3, tx_songs.img, tg.name FROM tx_songs JOIN tx_groups tg on tg.ID_group = tx_songs.ID_group WHERE tx_songs.ID_g LIKE 8";
 $result = mysqli_query($db, $get_all_rock_songs);
